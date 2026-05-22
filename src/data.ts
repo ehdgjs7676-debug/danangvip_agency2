@@ -25,7 +25,7 @@ export const INITIAL_BENEFITS: CasinoBenefit[] = [
   {
     id: "benefit-hotel",
     title: "5성급 최고급 호텔 전액 지원",
-    description: "포시즌스 리조트, 호이아나 로즈우드, 인터컨티넨탈 스위트룸 숙박",
+    description: "포시즌스 리조트, 호이아나 비취리조트, 인터컨티넨탈 스위트룸 숙박",
     detail: "게임 등급 및 규모에 맞추어 다낭 및 호이안 내에 위치한 최상위 5성 최고급 스위트룸 숙박권을 유연하게 무상 지급 드립니다. 최고의 바다 전망과 24시간 개인 버틀러 서비스가 결합되어 완벽한 휴식을 선사합니다.",
     badge: "숙박 지원",
     iconName: "Hotel"
@@ -197,7 +197,7 @@ export const INITIAL_PORTFOLIOS: PortfolioExperience[] = [
     duration: "3박 4일",
     highlights: [
       "공항 착륙 즉시 전용 통로 및 의전 스프린터 픽업",
-      "호이아나 로즈우드 오션스위트 3일 풀 지원 숙박",
+      "호이아나 비취리조트 오션스위트 3일 풀 지원 숙박",
       "호이아나 쇼어스 최상의 시간 부킹 및 프로 원 포인트 레슨 동반",
       "VVIP 비밀 정산 전용 크레딧 오픈으로 비밀 자금 거래 완벽 소화"
     ],

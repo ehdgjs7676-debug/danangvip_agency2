@@ -47,7 +47,7 @@ export default function CounselForm({ onSubmitSuccess }: CounselFormProps) {
           
           {/* Kakao Card */}
           <div 
-            onClick={() => handleCopy("danangvip_vip", "카카오톡")}
+            onClick={() => handleCopy("danangvvip", "카카오톡")}
             className="group bg-[#060606] border border-white/5 hover:border-[#D4AF37]/40 p-6 rounded-none cursor-pointer hover:bg-[#D4AF37]/5 transition-all duration-300 flex flex-col justify-between space-y-6"
           >
             <div className="flex justify-between items-start">
@@ -67,9 +67,9 @@ export default function CounselForm({ onSubmitSuccess }: CounselFormProps) {
             <div className="space-y-4">
               <div className="bg-black/40 border border-white/5 py-3 px-4 flex justify-between items-center">
                 <span className="text-xs text-white/70 font-mono tracking-wider font-semibold">
-                  danangvip_vip
+                  danangvvip
                 </span>
-                {copiedId === "danangvip_vip" ? (
+                {copiedId === "danangvvip" ? (
                   <span className="text-[10px] text-[#D4AF37] font-bold flex items-center gap-1">
                     <Check className="w-3 h-3" /> 복사 완료
                   </span>
@@ -79,14 +79,14 @@ export default function CounselForm({ onSubmitSuccess }: CounselFormProps) {
               </div>
               
               <button className="w-full py-2.5 border border-[#FEE500]/20 hover:border-[#FEE500] bg-transparent text-[#FEE500]/80 group-hover:text-[#FEE500] text-[10px] font-extrabold rounded-none tracking-widest transition-all duration-300 uppercase">
-                {copiedId === "danangvip_vip" ? "아이디 복사완료" : "아이디 복사 후 카톡 추가"}
+                {copiedId === "danangvvip" ? "아이디 복사완료" : "아이디 복사 후 카톡 추가"}
               </button>
             </div>
           </div>
 
           {/* Telegram Card */}
           <div 
-            onClick={() => handleCopy("@danang_private", "텔레그램")}
+            onClick={() => handleCopy("@danangvvip", "텔레그램")}
             className="group bg-[#060606] border border-white/5 hover:border-[#D4AF37]/40 p-6 rounded-none cursor-pointer hover:bg-[#D4AF37]/5 transition-all duration-300 flex flex-col justify-between space-y-6"
           >
             <div className="flex justify-between items-start">
@@ -106,9 +106,9 @@ export default function CounselForm({ onSubmitSuccess }: CounselFormProps) {
             <div className="space-y-4">
               <div className="bg-black/40 border border-white/5 py-3 px-4 flex justify-between items-center">
                 <span className="text-xs text-white/70 font-mono tracking-wider font-semibold">
-                  @danang_private
+                  @danangvvip
                 </span>
-                {copiedId === "@danang_private" ? (
+                {copiedId === "@danangvvip" ? (
                   <span className="text-[10px] text-[#D4AF37] font-bold flex items-center gap-1">
                     <Check className="w-3 h-3" /> 복사 완료
                   </span>
@@ -118,7 +118,7 @@ export default function CounselForm({ onSubmitSuccess }: CounselFormProps) {
               </div>
 
               <button className="w-full py-2.5 border border-[#0088cc]/20 hover:border-[#0088cc] bg-transparent text-[#0088cc]/80 group-hover:text-[#0088cc] text-[10px] font-extrabold rounded-none tracking-widest transition-all duration-300 uppercase">
-                {copiedId === "@danang_private" ? "아이디 복사완료" : "아이디 복사 후 텔레 전송"}
+                {copiedId === "@danangvvip" ? "아이디 복사완료" : "아이디 복사 후 텔레 전송"}
               </button>
             </div>
           </div>
