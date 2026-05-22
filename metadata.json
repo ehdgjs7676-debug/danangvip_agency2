@@ -1,0 +1,6 @@
+{
+  "name": "Danang VIP Casino & Private Travel",
+  "description": "다낭 VIP 카지노, 프라이빗 골프, 럭셔리 풀빌라, 나이트 엔터테인먼트, 1:1 전담 서비스",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

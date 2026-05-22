@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cinzel", serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Noto Sans KR", "Inter", sans-serif;
+  
+  /* Custom Luxury Colors */
+  --color-gold-50: #fbf7eb;
+  --color-gold-100: #f5edd0;
+  --color-gold-200: #ebd69b;
+  --color-gold-300: #e2be4a;
+  --color-gold-400: #D4AF37;
+  --color-gold-450: #D4AF37;
+  --color-gold-500: #b89125;
+  --color-gold-600: #9c781d;
+  --color-gold-700: #7d5e17;
+  --color-gold-800: #5e4611;
+  --color-gold-900: #3f2f0c;
+  
+  --color-luxury-black: #050505;
+  --color-luxury-dark: #0c0c0c;
+  --color-luxury-gray: #161616;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-luxury-black)] text-gray-200 antialiased font-sans overflow-x-hidden;
+    background-image: 
+      radial-gradient(circle at 0% 0%, rgba(197, 134, 38, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 100% 100%, rgba(197, 134, 38, 0.03) 0%, transparent 50%);
+  }
+}
+
+/* Custom gorgeous scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-luxury-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-luxury-gray);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-600);
+}
