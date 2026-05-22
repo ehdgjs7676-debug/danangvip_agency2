@@ -102,10 +102,10 @@ export default function Header({
           {/* Admin Indicator/Trigger */}
           <button
             onClick={onOpenAdmin}
-            className={`p-2 rounded-full border transition-all cursor-pointer ${
+            className={`p-2 rounded-none border transition-all cursor-pointer ${
               isAdminLoggedIn
-                ? "border-gold-500 bg-gold-950/40 text-gold-400"
-                : "border-gray-800 hover:border-gold-600/50 text-gray-400 hover:text-white"
+                ? "border-[#D4AF37] bg-[#D4AF37]/10 text-[#D4AF37]"
+                : "border-white/10 hover:border-[#D4AF37]/50 text-white/50 hover:text-white"
             }`}
             title="관리자 제어반"
             id="admin-btn-header"
@@ -116,10 +116,10 @@ export default function Header({
           {/* Luxury CTA */}
           <button
             onClick={() => handleItemClick("counsel")}
-            className="flex items-center gap-1.5 px-4 py-2 text-[11px] tracking-wider rounded border border-gold-400/40 bg-gradient-to-r from-gold-900/40 to-yellow-950/40 hover:from-gold-800/60 hover:to-yellow-900/60 text-gold-200 hover:text-white hover:border-gold-300 transition-all font-medium cursor-pointer"
+            className="flex items-center gap-1.5 px-4 py-2 text-[11px] tracking-wider rounded-none border border-[#D4AF37]/40 bg-gradient-to-r from-[#D4AF37]/15 to-amber-950/15 hover:from-[#D4AF37]/25 hover:to-amber-900/25 text-[#D4AF37] hover:text-white hover:border-[#D4AF37] transition-all font-medium cursor-pointer"
           >
-            <Send className="w-3 h-3 text-gold-400" />
-            1:1 상담요청
+            <Send className="w-3 h-3 text-[#D4AF37]" />
+            VIP 직통 소통망
           </button>
         </div>
 
@@ -127,10 +127,10 @@ export default function Header({
         <div className="lg:hidden flex items-center gap-2">
           <button
             onClick={onOpenAdmin}
-            className={`p-2 rounded border transition-all ${
+            className={`p-2 rounded-none border transition-all ${
               isAdminLoggedIn
-                ? "border-gold-500 bg-gold-950/30 text-gold-400"
-                : "border-gray-800 text-gray-400"
+                ? "border-[#D4AF37] bg-[#D4AF37]/10 text-[#D4AF37]"
+                : "border-white/10 text-white/50"
             }`}
             id="admin-btn-mobile"
           >
@@ -139,7 +139,7 @@ export default function Header({
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 border border-gray-800 text-gray-300 hover:text-white hover:bg-luxury-gray rounded"
+            className="p-2 border border-white/10 text-white/80 hover:text-white hover:bg-white/5 rounded-none"
             id="mobile-menu-trigger"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -149,15 +149,15 @@ export default function Header({
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-luxury-dark border-b border-gold-800/30 px-5 py-6 absolute top-full left-0 w-full flex flex-col gap-4 animate-slide-down shadow-xl">
+        <div className="lg:hidden bg-[#0c0c0c] border-b border-white/10 px-5 py-6 absolute top-full left-0 w-full flex flex-col gap-4 animate-slide-down shadow-xl">
           {menuItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleItemClick(item.id)}
-              className={`text-left text-xs tracking-widest font-semibold py-2.5 border-b border-gray-900 ${
+              className={`text-left text-xs tracking-widest font-semibold py-3 border-b border-white/5 ${
                 activeSection === item.id
-                  ? "text-gold-400 pl-2"
-                  : "text-gray-400"
+                  ? "text-[#D4AF37] pl-2 font-bold"
+                  : "text-white/65"
               }`}
             >
               <Trans ko={item.ko}>
@@ -168,9 +168,9 @@ export default function Header({
           <div className="flex gap-2.5 pt-2">
             <button
               onClick={() => handleItemClick("counsel")}
-              className="flex-1 flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-gold-600 to-amber-700 hover:from-gold-500 hover:to-amber-600 text-white rounded text-xs font-bold tracking-widest"
+              className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-[#D4AF37] hover:bg-[#bfa032] text-black rounded-none text-xs font-extrabold tracking-widest uppercase"
             >
-              <Send className="w-4 h-4" /> 1:1 일정상담
+              <Send className="w-4 h-4 text-black stroke-[3]" /> VIP 직통 극비채널
             </button>
           </div>
         </div>

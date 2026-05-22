@@ -30,7 +30,7 @@ export default function DetailModal({
   description,
   bullets = [],
   locationDetails,
-  ctaText = "1:1 프라이빗 견적 문의하기",
+  ctaText = "VIP 비밀 라인 실시간 문의하기",
   onCtaClick
 }: DetailModalProps) {
   if (!isOpen) return null;

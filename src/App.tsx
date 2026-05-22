@@ -199,21 +199,39 @@ export default function App() {
         </div>
       )}
 
-      {/* Floating Side Quick Messenger Dock for High Conversion Rate */}
+      {/* Floating Messenger Contacts: Sticky Bottom Bar on Mobile, Elegant Float on Desktop */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-[#050505]/95 border-t border-white/10 backdrop-blur-md px-4 py-3 flex md:hidden items-center justify-between gap-3 shadow-2xl">
+        <button
+          onClick={() => handleCopyTarget("danangvip_vip", "카카오톡")}
+          className="flex-1 flex items-center justify-center gap-2 bg-[#FEE500] text-black font-extrabold text-[11px] py-3.5 tracking-wider rounded-none transition-all active:scale-[0.98] cursor-pointer"
+        >
+          <MessageCircle className="w-4 h-4 fill-current" />
+          <span>카톡 ID 복사추가</span>
+        </button>
+        <button
+          onClick={() => handleCopyTarget("@danang_private", "텔레그램")}
+          className="flex-1 flex items-center justify-center gap-2 bg-[#0088cc] text-white font-extrabold text-[11px] py-3.5 tracking-wider rounded-none transition-all active:scale-[0.98] cursor-pointer"
+        >
+          <Send className="w-4 h-4 fill-current" />
+          <span>텔레그램 복사문의</span>
+        </button>
+      </div>
+
+      {/* Floating Side Quick Messenger Dock for Desktop */}
       <div className="fixed bottom-6 right-6 z-40 hidden md:flex flex-col gap-2.5">
         <button
           onClick={() => handleCopyTarget("danangvip_vip", "카카오톡")}
-          className="group flex items-center justify-end gap-2.5 cursor-pointer bg-[#FEE500] hover:bg-[#ebd200] text-luxury-black font-extrabold text-xs px-4 py-3 rounded-full shadow-2xl transition-all duration-300 translate-y-0 hover:-translate-y-1"
+          className="group flex items-center justify-end gap-2.5 cursor-pointer bg-[#FEE500] hover:bg-[#ebd200] text-black font-extrabold text-xs px-4 py-3 rounded-none shadow-2xl transition-all duration-300 translate-y-0 hover:-translate-y-1"
         >
           <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 font-bold whitespace-nowrap tracking-wider text-[11px] pr-1">
             카카오톡 ID: danangvip_vip 복사
           </span>
-          <MessageCircle className="w-5 h-5" />
+          <MessageCircle className="w-5 h-5 fill-current" />
         </button>
 
         <button
           onClick={() => handleCopyTarget("@danang_private", "텔레그램")}
-          className="group flex items-center justify-end gap-2.5 cursor-pointer bg-[#0088cc] hover:bg-[#0074ad] text-white font-extrabold text-xs px-4 py-3 rounded-full shadow-2xl transition-all duration-300 translate-y-0 hover:-translate-y-1"
+          className="group flex items-center justify-end gap-2.5 cursor-pointer bg-[#0088cc] hover:bg-[#0074ad] text-white font-extrabold text-xs px-4 py-3 rounded-none shadow-2xl transition-all duration-300 translate-y-0 hover:-translate-y-1"
         >
           <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 font-bold whitespace-nowrap tracking-wider text-[11px] pr-1">
             텔레그램: @danang_private 복사
@@ -304,21 +322,21 @@ export default function App() {
           </div>
 
           {/* Quick Copy Contact Deck for Easy Conversion */}
-          <div className="pt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto pt-10 border-t border-gray-900/45">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 max-w-3xl mx-auto pt-10 border-t border-white/10">
             {[
-              { id: "kakao", label: "카카오톡 즉시추가", val: "danangvip_vip", icon: MessageCircle, bg: "hover:border-[#FEE500]/25" },
-              { id: "tele", label: "텔레그램 직배정", val: "@danang_private", icon: Send, bg: "hover:border-[#0088cc]/25" },
-              { id: "hotline", label: "비상 긴급전화", val: "24시 대기중", icon: Smartphone, bg: "hover:border-gold-500/25" },
-              { id: "hotel", label: "제휴 카지노호텔", val: "호이아나 로즈우드", icon: Hotel, bg: "hover:border-purple-500/25" },
+              { id: "kakao", label: "카카오톡 즉시추가", val: "danangvip_vip", icon: MessageCircle, border: "hover:border-[#FEE500]/40" },
+              { id: "tele", label: "텔레그램 직배정", val: "@danang_private", icon: Send, border: "hover:border-[#0088cc]/40" },
+              { id: "hotline", label: "비상 긴급전화", val: "24시 대기중", icon: Smartphone, border: "hover:border-[#D4AF37]/40" },
+              { id: "hotel", label: "제휴 카지노호텔", val: "호이아나 로즈우드", icon: Hotel, border: "hover:border-white/20" },
             ].map((contact, i) => (
               <div
                 key={contact.id}
                 onClick={contact.id !== "hotel" && contact.id !== "hotline" ? () => handleCopyTarget(contact.val, contact.label) : undefined}
-                className={`bg-luxury-dark/40 border border-gray-900 px-4 py-3 rounded cursor-pointer transition-all ${contact.bg} flex flex-col items-center justify-center group`}
+                className={`bg-[#0c0c0c] border border-white/5 px-4 py-4 rounded-none cursor-pointer transition-all duration-300 ${contact.border} flex flex-col items-center justify-center group hover:bg-[#D4AF37]/5`}
               >
-                <contact.icon className="w-4 h-4 text-gold-400 group-hover:scale-110 transition-transform mb-1" />
-                <span className="text-[10px] text-gray-500 group-hover:text-gold-200 transition-colors uppercase font-semibold font-mono tracking-widest">{contact.label}</span>
-                <span className="text-xs text-white font-bold tracking-wider truncate max-w-full font-mono mt-0.5">{contact.val}</span>
+                <contact.icon className="w-4 h-4 text-[#D4AF37] group-hover:scale-110 transition-transform mb-1.5" />
+                <span className="text-[9px] text-white/40 group-hover:text-[#D4AF37] transition-colors uppercase font-bold font-sans tracking-[0.15em]">{contact.label}</span>
+                <span className="text-xs text-white group-hover:text-white font-bold tracking-wider truncate max-w-full font-mono mt-1">{contact.val}</span>
               </div>
             ))}
           </div>
@@ -409,21 +427,21 @@ export default function App() {
           </div>
 
           {/* Quick Caution Banner for VIP security */}
-          <div className="bg-luxury-gray/20 border border-gold-900/20 rounded-xl p-5 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="space-y-1 text-center md:text-left">
-              <div className="text-gold-400 text-xs font-bold leading-tight uppercase flex items-center justify-center md:justify-start gap-1">
-                <Shield className="w-4 h-4 text-gold-450" />
-                공개 되지 않는 VVIP 극밀 등급 혜택
+          <div className="bg-[#0c0c0c] border border-white/10 rounded-none p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 text-center md:text-left">
+              <div className="text-[#D4AF37] text-xs font-bold leading-tight uppercase flex items-center justify-center md:justify-start gap-2">
+                <Shield className="w-4 h-4 text-[#D4AF37]" />
+                <Trans ko="공개 해제 불가 VVIP 극밀 우대 특전">공개 되지 않는 VVIP 극밀 등급 혜택</Trans>
               </div>
-              <p className="text-xs text-gray-400 font-sans leading-relaxed">
+              <p className="text-xs text-white/50 font-sans leading-relaxed">
                 블랙잭 하객, 대형 바카라 하이롤러 등 맞춤 롤링 콤프 정산과 항공 보존 등급은 1:1 비밀 무장 메신저 상담에서만 투명하게 제공됩니다.
               </p>
             </div>
             <button
               onClick={() => handleScrollToSection("counsel")}
-              className="py-3 px-6 bg-gold-600 hover:bg-gold-550 text-luxury-black font-extrabold text-[11px] tracking-widest rounded transition-colors whitespace-nowrap cursor-pointer"
+              className="w-full md:w-auto py-3 px-8 bg-[#D4AF37] hover:bg-[#bfa032] text-black font-extrabold text-[11px] tracking-widest rounded-none transition-all uppercase whitespace-nowrap cursor-pointer"
             >
-              1:1 비공개 혜택 상담받기
+              VIP 비밀 라인 상담받기
             </button>
           </div>
         </div>
@@ -667,7 +685,7 @@ export default function App() {
                     onClick={() => handleScrollToSection("counsel")}
                     className="w-full py-3 bg-white/5 hover:bg-[#D4AF37]/10 text-[#D4AF37] hover:text-white border border-white/10 hover:border-[#D4AF37]/40 text-xs font-bold rounded-none tracking-widest transition-colors cursor-pointer"
                   >
-                    이와 유사한 일정 1:1 상담받기
+                    이와 유사한 비밀 일정 문의하기
                   </button>
                 </div>
               </div>
@@ -774,7 +792,7 @@ export default function App() {
       </section>
 
       {/* 10. LUXURY FOOTER DECK */}
-      <footer className="bg-luxury-black border-t border-gray-905 py-12 relative z-10 text-xs text-gray-500">
+      <footer className="bg-luxury-black border-t border-gray-905 pt-12 pb-28 md:pb-12 relative z-10 text-xs text-gray-500">
         <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-10">
           
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-10 border-b border-gray-900">
